@@ -32,7 +32,7 @@ def calculateCuboid():
     result_display.insert('1.0', f"Area: {area}\nVolume: {volume}")
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Arjhay Sebua\Desktop\Calculator GUI\build\assets\frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(r"Calculator GUI/build/assets/frame1")
 
 
 def relative_to_assets(path: str) -> Path:
