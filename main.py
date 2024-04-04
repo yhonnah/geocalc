@@ -1,12 +1,13 @@
 # main code for calculator (commit nyo sa vscode para maka push and pull tayo ng code ng madali)
 
+import tkinter as tk
 from math import pi, sqrt
 
 # sphere when radius is given
 
 def sphereRadius(r):
     sphereDiameter = 2 * r
-    circumference = pi * diameter
+    circumference = pi * sphereDiameter
 
     sphereArea = 4 * pi * (r ** 2)
     sphereVolume = (4/3) * pi * (r ** 3)
@@ -97,6 +98,8 @@ def coneRadius(base, height, radius):
 
     return coneArea, coneVolume, coneDiameter
 
+# cone given diameter
+
 def coneDiameter(base, height, diameter):
     coneRadius = diameter / 2
     radius = coneRadius
@@ -104,3 +107,9 @@ def coneDiameter(base, height, diameter):
     coneVolume = (pi * (radius ** 2) * height) / 3
 
     return coneArea, coneVolume, coneRadius
+
+def validateLogin():
+    userid = usernameEntry.get()
+    password = passwordEntry.get()
+
+    
