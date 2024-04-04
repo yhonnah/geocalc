@@ -11,21 +11,21 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Yohann\OneDrive - De La Salle University - Manila\DLSU\TERM 2\LBYCPA1\geocalc\geocalc\build\assets\frame2")
+ASSETS_PATH2 = OUTPUT_PATH / Path(r"build\assets\frame2")
 
 
-def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
+def relative_to_assets2(path: str) -> Path:
+    return ASSETS_PATH2 / Path(path)
 
 
-window = Tk()
+shapeWindow = Tk()
 
-window.geometry("862x519")
-window.configure(bg = "#016938")
+shapeWindow.geometry("862x519")
+shapeWindow.configure(bg = "#016938")
 
 
 canvas = Canvas(
-    window,
+    shapeWindow,
     bg = "#016938",
     height = 519,
     width = 862,
@@ -45,8 +45,8 @@ canvas.create_text(
 )
 
 image_image_1 = PhotoImage(
-    file=relative_to_assets("image_1.png"))
-image_1 = canvas.create_image(
+    file=relative_to_assets2("shape_1.png"))
+shape_1 = canvas.create_image(
     431.0,
     146.0,
     image=image_image_1
@@ -61,15 +61,15 @@ canvas.create_rectangle(
     outline="")
 
 image_image_2 = PhotoImage(
-    file=relative_to_assets("image_2.png"))
-image_2 = canvas.create_image(
+    file=relative_to_assets2("shape_2.png"))
+shape_2 = canvas.create_image(
     192.0,
     148.0,
     image=image_image_2
 )
 
 button_image_1 = PhotoImage(
-    file=relative_to_assets("button_1.png"))
+    file=relative_to_assets2("button_1.png"))
 button_1 = Button(
     image=button_image_1,
     borderwidth=0,
@@ -93,7 +93,7 @@ canvas.create_rectangle(
     outline="")
 
 button_image_2 = PhotoImage(
-    file=relative_to_assets("button_2.png"))
+    file=relative_to_assets2("button_2.png"))
 button_2 = Button(
     image=button_image_2,
     borderwidth=0,
@@ -117,7 +117,7 @@ canvas.create_rectangle(
     outline="")
 
 button_image_3 = PhotoImage(
-    file=relative_to_assets("button_3.png"))
+    file=relative_to_assets2("button_3.png"))
 button_3 = Button(
     image=button_image_3,
     borderwidth=0,
@@ -141,7 +141,7 @@ canvas.create_rectangle(
     outline="")
 
 button_image_4 = PhotoImage(
-    file=relative_to_assets("button_4.png"))
+    file=relative_to_assets2("button_4.png"))
 button_4 = Button(
     image=button_image_4,
     borderwidth=0,
@@ -165,7 +165,7 @@ canvas.create_rectangle(
     outline="")
 
 button_image_5 = PhotoImage(
-    file=relative_to_assets("button_5.png"))
+    file=relative_to_assets2("button_5.png"))
 button_5 = Button(
     image=button_image_5,
     borderwidth=0,
@@ -189,7 +189,7 @@ canvas.create_rectangle(
     outline="")
 
 button_image_6 = PhotoImage(
-    file=relative_to_assets("button_6.png"))
+    file=relative_to_assets2("button_6.png"))
 button_6 = Button(
     image=button_image_6,
     borderwidth=0,
@@ -205,35 +205,35 @@ button_6.place(
 )
 
 image_image_3 = PhotoImage(
-    file=relative_to_assets("image_3.png"))
-image_3 = canvas.create_image(
+    file=relative_to_assets2("shape_3.png"))
+shape_3 = canvas.create_image(
     671.0,
     146.0,
     image=image_image_3
 )
 
 image_image_4 = PhotoImage(
-    file=relative_to_assets("image_4.png"))
-image_4 = canvas.create_image(
+    file=relative_to_assets2("shape_4.png"))
+shape_4 = canvas.create_image(
     192.0,
     350.0,
     image=image_image_4
 )
 
 image_image_5 = PhotoImage(
-    file=relative_to_assets("image_5.png"))
-image_5 = canvas.create_image(
+    file=relative_to_assets2("shape_5.png"))
+shape_5 = canvas.create_image(
     671.0,
     350.0,
     image=image_image_5
 )
 
 image_image_6 = PhotoImage(
-    file=relative_to_assets("image_6.png"))
-image_6 = canvas.create_image(
+    file=relative_to_assets2("shape_6.png"))
+shape_6 = canvas.create_image(
     431.0,
     350.0,
     image=image_image_6
 )
-window.resizable(False, False)
-window.mainloop()
+shapeWindow.resizable(False, False)
+shapeWindow.mainloop()
