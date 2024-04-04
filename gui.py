@@ -6,8 +6,10 @@
 from pathlib import Path
 from gui2 import openShapesWindow
 
+# main calculator code
 # from tkinter import *
 # Explicit imports to satisfy Flake8
+
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import tkinter as tk
 
