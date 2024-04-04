@@ -4,7 +4,7 @@
 
 
 from pathlib import Path
-from gui2 import openShapesWindow
+from main_menu import openShapesWindow
 
 # main calculator code
 # from tkinter import *
