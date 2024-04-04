@@ -108,8 +108,6 @@ def coneDiameter(base, height, diameter):
 
     return coneArea, coneVolume, coneRadius
 
-def validateLogin():
-    userid = usernameEntry.get()
-    password = passwordEntry.get()
+
 
     

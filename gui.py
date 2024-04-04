@@ -8,15 +8,112 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
-
+import tkinter as tk
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\Arjhay Sebua\Desktop\build\build\assets\frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(r"build\assets\frame1")
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+def validateLogin():
+    user = entry_1.get() 
+    password = entry_2.get()
+
+
+    try:
+        username = float(user)
+    
+    except:
+        canvas.delete("passwrong")
+        canvas.delete("userwrong")
+        canvas.create_text(
+        500.0,
+        152.0,
+        anchor="nw",
+        text="Please input an ID number",
+        fill="#FFFFFF",
+        font=("Inter", 16 * -1),
+        tag = "nouser",
+    )
+
+    userid = (((username // 10000000) * 8) + (((username % 10000000) // 1000000) * 7) + (((username % 1000000) // 100000) * 6) + (((username % 100000) // 10000) * 5) + (((username % 10000) // 1000) * 4) + (((username % 1000) // 100) * 3) + (((username % 100) // 10) * 2) + (username % 10)) / 11 
+    if userid % 1 == 0:
+        usernameValid = 1
+    else:
+        usernameValid = 0
+
+    if password == "123":
+        passwordValid = 1
+    else:
+        passwordValid = 0
+
+    if passwordValid == 1 and usernameValid == 1:
+        print("VALID LOGIN!!")
+        canvas.delete("passwrong")
+        canvas.delete("nouser")
+        canvas.delete("userwrong")
+        entry_1.delete(0, tk.END)
+        entry_2.delete(0, tk.END)
+
+    elif passwordValid == 1 and usernameValid == 0:
+        canvas.delete("passwrong")
+        canvas.delete("nouser")
+        canvas.create_text(
+        500.0,
+        152.0,
+        anchor="nw",
+        text="Please input a valid ID number",
+        fill="#FFFFFF",
+        font=("Inter", 16 * -1),
+        tag = "userwrong"
+    )
+        entry_1.delete(0, tk.END)
+        entry_2.delete(0, tk.END)
+    
+    elif passwordValid == 0 and usernameValid == 1:
+        canvas.delete("userwrong")
+        canvas.delete("nouser")
+        canvas.create_text(
+        570.0,
+        300.0,
+        anchor="nw",
+        text="Incorrect Password",
+        fill="#FFFFFF",
+        font=("Inter", 16 * -1),
+        tag = "passwrong"
+    )
+        entry_1.delete(0, tk.END)
+        entry_2.delete(0, tk.END)
+
+    else:
+        canvas.create_text(
+        500.0,
+        152.0,
+        anchor="nw",
+        text="Please input a valid ID number",
+        fill="#FFFFFF",
+        font=("Inter", 16 * -1),
+        tag = "userwrong"
+    )
+        canvas.create_text(
+        570.0,
+        300.0,
+        anchor="nw",
+        text="Incorrect Password",
+        fill="#FFFFFF",
+        font=("Inter", 16 * -1),
+        tag = "passwrong"
+    )
+        entry_1.delete(0, tk.END)
+        entry_2.delete(0, tk.END) 
+
+    
+
+        
+
+    
 
 window = Tk()
 
@@ -55,7 +152,7 @@ canvas.create_text(
     58.0,
     32.0,
     anchor="nw",
-    text="User ID",
+    text="ID Num",
     fill="#FFFFFF",
     font=("Inter", 16 * -1)
 )
@@ -64,7 +161,7 @@ canvas.create_text(
     58.0,
     32.0,
     anchor="nw",
-    text="User ID",
+    text="ID Num",
     fill="#FFFFFF",
     font=("Inter", 16 * -1)
 )
@@ -93,7 +190,7 @@ canvas.create_text(
     58.0,
     173.0,
     anchor="nw",
-    text="Password\n",
+    text="Password\nHINT: 123",
     fill="#FFFFFF",
     font=("Inter", 16 * -1)
 )
@@ -109,7 +206,8 @@ entry_2 = Entry(
     bd=0,
     bg="#FFFFFF",
     fg="#000716",
-    highlightthickness=0
+    highlightthickness=0,
+    show = "*"
 )
 entry_2.place(
     x=66.0,
@@ -172,7 +270,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=validateLogin,
     relief="flat"
 )
 button_1.place(
