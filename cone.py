@@ -12,7 +12,7 @@ def coneFormula():
 
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\rsebua\Desktop\geocalc\Calculator GUI\build\assets\frame3")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"build\assets\frame3")
 
 
     def relative_to_assets(path: str) -> Path:
