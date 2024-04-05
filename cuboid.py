@@ -5,7 +5,7 @@ def cuboidFormula():
 
 
     from pathlib import Path
-
+    from main_menu import openShapesWindow
     # from tkinter import *
     # Explicit imports to satisfy Flake8
     from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
@@ -33,7 +33,7 @@ def cuboidFormula():
         result_display.insert('1.0', f"Area: {area}\nVolume: {volume}")
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"Calculator GUI/build/assets/frame1")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\rsebua\Desktop\geocalc\Calculator GUI\build\assets\frame1")
 
 
     def relative_to_assets(path: str) -> Path:
@@ -191,7 +191,7 @@ def cuboidFormula():
         image=button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command=lambda: (window.destroy(), openShapesWindow()),
         relief="flat"
     )
     button_2.place(
