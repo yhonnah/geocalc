@@ -18,7 +18,7 @@ def openShapesWindow():
 
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH2 = OUTPUT_PATH / Path(r"C:\Users\rsebua\Desktop\geocalc\build\assets\frame2")
+    ASSETS_PATH2 = OUTPUT_PATH / Path(r"build\assets\frame2")
 
 
     def relative_to_assets(path: str) -> Path:
