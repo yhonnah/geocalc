@@ -3,6 +3,7 @@ def coneFormula():
     # https://github.com/ParthJadhav/Tkinter-Designer
     # testing tesing
 
+    from main_menu import openShapesWindow
     from pathlib import Path
     from math import pi, sqrt
     # from tkinter import *
@@ -11,7 +12,7 @@ def coneFormula():
 
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"Calculator GUI\build\assets\frame3")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\rsebua\Desktop\geocalc\Calculator GUI\build\assets\frame3")
 
 
     def relative_to_assets(path: str) -> Path:
@@ -217,7 +218,7 @@ def coneFormula():
         image=button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command=lambda: (window.destroy(), openShapesWindow()),
         relief="flat"
     )
     button_2.place(
