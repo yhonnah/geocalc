@@ -176,7 +176,7 @@ def openShapesWindow():
         image=button_image_5,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: (shapeWindow.destroy(), cuboidFormula()),
+        command=lambda: (shapeWindow.destroy(), coneFormula()),
         relief="flat"
     )
     button_5.place(
@@ -200,7 +200,7 @@ def openShapesWindow():
         image=button_image_6,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: (shapeWindow.destroy(), coneFormula()),
+        command=lambda: (shapeWindow.destroy(), cuboidFormula()),
         relief="flat"
     )
     button_6.place(
