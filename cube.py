@@ -31,7 +31,8 @@ def cubeFormula():
 
             # Calculate cube surface area and volume
             surface_area, volume = cube(side_length)
-
+            with open("cube_results.txt", "w") as file:
+                file.write(f"Surface Area: {surface_area} square units\nVolume: {volume} cubic units")
             # Display the results in the text widget with units
             result_text = f"Surface Area: {surface_area} square units\nVolume: {volume} cubic units"
             result_display.config(state="normal")
