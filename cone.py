@@ -52,6 +52,9 @@ def coneFormula():
             area = "{:.3f}".format(area)
             volume = "{:.3f}".format(volume)
             coneDiameter = "{:.3f}".format(coneDiameter)
+            
+            with open("cone_results.txt", "w") as file:
+                file.write(f"Surface Area: {area}\nVolume: {volume}\nCone Diameter: {coneDiameter}")
 
             # Display the results in the text widget
             result_text = f"Surface Area: {area}\nVolume: {volume}\nCone Diameter: {coneDiameter}"
