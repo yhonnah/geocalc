@@ -28,6 +28,9 @@ def cuboidFormula():
         # Calculate cuboid area and volume
         area, volume = cuboid(length, width, height)
 
+        with open("cuboid_results.txt", "w") as file:
+            file.write(f"Surface Area: {area}\nVolume: {volume}")
+        
         # Display result
         result_display.delete('1.0', 'end')
         result_display.insert('1.0', f"Area: {area}\nVolume: {volume}")
