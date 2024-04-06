@@ -46,6 +46,9 @@ def prismFormula():
             # Call the triangular prism function
             perimeter, area, volume = triangularPrismSides(a, b, c, height, length, width)
 
+            with open("triangular_prism_results.txt", "w") as file:
+                file.write(f"Perimeter: {perimeter}\nArea: {area}\nVolume: {volume}")
+            
             # Display the results in the text widget
             result_text = f"Perimeter: {perimeter}\nArea: {area}\nVolume: {volume}"
             result_display.config(state="normal")
