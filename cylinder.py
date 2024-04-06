@@ -36,6 +36,9 @@ def cylinderFormula():
             # Calculate using cylinderRadius function
             lateral_area, surface_area, volume, cylinder_diameter = cylinderRadius(height, radius)
 
+            with open("cylinder_results.txt", "w") as file:
+                file.write(f"Lateral Area: {lateral_area}\nSurface Area: {surface_area}\nVolume: {volume}\nCylinder Diameter: {cylinder_diameter}")
+            
             # Format the results to one decimal point
             lateral_area = "{:.1f}".format(lateral_area)
             surface_area = "{:.1f}".format(surface_area)
