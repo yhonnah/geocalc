@@ -36,6 +36,9 @@ def sphereFormula():
             # Calculate sphere properties
             area, volume, diameter, circumference = sphereRadius(radius)
 
+            with open("sphere_results.txt", "w") as file:
+                file.write(f"Surface Area: {area}\nVolume: {volume}\nDiameter: {diameter}\nCircumference: {circumference}")
+            
             # Format the results to display two decimal points
             area = "{:.2f}".format(area)
             volume = "{:.2f}".format(volume)
